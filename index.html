@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BusyBox PH</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>BusyBox PH</h1>
+
+    <div class="container">
+        <div class="column">
+            <h2>Shopee</h2>
+            <ul>
+                {% if products.shopee %}
+                    {% for product in products.shopee %}
+                        <li>
+                            {% if product.image_url %}
+                                <img src="{{ url_for('static', filename=product.image_url) }}" alt="{{ product.title }}" width="100">
+                            {% endif %}
+                            <h3>{{ product.title }}</h3>
+                            <p>{{ product.price }}</p>
+                            {% if product.affiliate_url %}
+                                <a href="{{ product.affiliate_url }}" target="_blank">Buy Now</a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <p>No Shopee products yet.</p>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div class="column">
+            <h2>Lazada</h2>
+            <ul>
+                {% if products.lazada %}
+                    {% for product in products.lazada %}
+                        <li>
+                            {% if product.image_url %}
+                                <img src="{{ url_for('static', filename=product.image_url) }}" alt="{{ product.title }}" width="100">
+                            {% endif %}
+                            <h3>{{ product.title }}</h3>
+                            <p>{{ product.price }}</p>
+                            {% if product.affiliate_url %}
+                                <a href="{{ product.affiliate_url }}" target="_blank">Buy Now</a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <p>No Lazada products yet.</p>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div class="column">
+            <h2>Amazon</h2>
+            <ul>
+                {% if products.amazon %}
+                    {% for product in products.amazon %}
+                        <li>
+                            {% if product.image_url %}
+                                <img src="{{ url_for('static', filename=product.image_url) }}" alt="{{ product.title }}" width="100">
+                            {% endif %}
+                            <h3>{{ product.title }}</h3>
+                            <p>{{ product.price }}</p>
+                            {% if product.affiliate_url %}
+                                <a href="{{ product.affiliate_url }}" target="_blank">Buy Now</a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <p>No Amazon products yet.</p>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div class="column">
+            <h2>Digital Products</h2>
+            <ul>
+                {% if products.digital %}
+                    {% for product in products.digital %}
+                        <li>
+                            {% if product.image_url %}
+                                <img src="{{ url_for('static', filename=product.image_url) }}" alt="{{ product.title }}" width="100">
+                            {% endif %}
+                            <h3>{{ product.title }}</h3>
+                            <p>{{ product.details }}</p>
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <p>No digital products yet.</p>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    <a href="{{ url_for('product_generator') }}">Product Generator (Admin)</a>
+    <a href="{{ url_for('digital_product') }}">Add Digital Product</a>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

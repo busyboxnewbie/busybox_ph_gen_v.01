@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to wrap onto multiple lines if needed */
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.column {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 23%; /* Adjust this width as needed (e.g., 24% or 25%) */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Add some spacing between columns */
+}
+
+.column img {
+    max-width: 100%;
+    height: auto;
+}
