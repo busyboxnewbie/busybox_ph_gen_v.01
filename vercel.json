@@ -4,8 +4,8 @@
         {
             "src": "app.py",
             "use": "@vercel/python",
-            "config": {  // Add the "config" object
-                "static": "static" // "static" property goes here
+            "config": {
+                "static": "static"
             }
         }
     ],
